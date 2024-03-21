@@ -27,7 +27,7 @@ import {
 } from '@ant-design/icons';
 import utils from 'utils';
 import { useSelector } from 'react-redux';
-import DefaultDashboard from "./Default1";
+import DefaultDashboard from "./DefaultCards";
 const { Meta } = Card;
 
 const MembersChart = props => (
