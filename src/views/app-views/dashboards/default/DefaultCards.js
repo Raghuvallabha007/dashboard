@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col, Space, Avatar, Progress, Icon } from "antd";
+import { Card, Row, Col, Avatar, Progress } from "antd";
 const { Meta } = Card;
 
 export const DefaultDashboard = () => {
