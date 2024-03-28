@@ -126,5 +126,19 @@
 
 	"sidenav.docs": "Docs",
 	"sidenav.docs.documentation": "Documentation",
-	"sidenav.docs.changelog": "Changelog"
+	"sidenav.docs.changelog": "Changelog",
+
+	"sidenav.members": "Members List",
+	"sidenav.members.basicusers": "Basic Users",
+    "sidenav.members.silverusers": "Silver Users",
+    "sidenav.members.primeusers": "Prime Users",
+    "sidenav.members.distributors": "Distributors",
+    "sidenav.members.franchiesis": "Franchiesis",
+    "sidenav.members.allMemberList": "All Members List",
+
+	"sidenav.fund": "Fund",
+	"sidenav.fund.transfer.returns": "Transfer/Returns",
+    "sidenav.fund.requests": "Reqests",
+    "sidenav.fund.requests.reports": "Requests Reports",
+    "sidenav.fund.all.reports": "All Fund Reports"
 }
