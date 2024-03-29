@@ -93,17 +93,17 @@ const dashBoardNavTree = [{
     },
     {
       key: 'fund-page',
-      path: `${APP_PREFIX_PATH}/fund/fundpage`,
+      path: `${APP_PREFIX_PATH}/fund`,
       title: 'sidenav.fund',
       icon: ShoppingCartOutlined,
       breadcrumb: true,
       submenu: [
         {
-          key: 'fund-page-transfers-Returns',
-          path: `${APP_PREFIX_PATH}/fund/transfers-returns`,
-          title: 'sidenav.fund.transfer.returns',
+          key: 'fund-page-transfers-returns',
+          path: `${APP_PREFIX_PATH}/fund/transfersreturns`,
+          title: 'sidenav.fund.transfer',
           icon: '',
-          breadcrumb: true,
+          breadcrumb: false,
           submenu: []
         },
         {
@@ -126,6 +126,39 @@ const dashBoardNavTree = [{
           key: 'fund-page-all-reports',
           path: `${APP_PREFIX_PATH}/fund/all-reports`,
           title: 'sidenav.fund.all.reports',
+          icon: '',
+          breadcrumb: false,
+          submenu: []
+        }
+      ]
+    },
+    {
+      key: 'kyc-page',
+      path: `${APP_PREFIX_PATH}/kyc`,
+      title: 'sidenav.kyc',
+      icon: ShoppingCartOutlined,
+      breadcrumb: true,
+      submenu: [
+        {
+          key: 'kyc-page-pending',
+          path: `${APP_PREFIX_PATH}/kyc/pending`,
+          title: 'sidenav.kyc.pending',
+          icon: '',
+          breadcrumb: false,
+          submenu: []
+        },
+        {
+          key: 'kyc-page-approved',
+          path: `${APP_PREFIX_PATH}/kyc/approved`,
+          title: 'sidenav.kyc.approved',
+          icon: '',
+          breadcrumb: false,
+          submenu: []
+        },
+        {
+          key: 'kyc-page-rejected',
+          path: `${APP_PREFIX_PATH}/kyc/rejected`,
+          title: 'sidenav.kyc.rejected',
           icon: '',
           breadcrumb: false,
           submenu: []

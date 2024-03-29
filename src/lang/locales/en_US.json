@@ -137,8 +137,13 @@
     "sidenav.members.allMemberList": "All Members List",
 
 	"sidenav.fund": "Fund",
-	"sidenav.fund.transfer.returns": "Transfer/Returns",
+	"sidenav.fund.transfer": "Transfer Returns",
     "sidenav.fund.requests": "Reqests",
     "sidenav.fund.requests.reports": "Requests Reports",
-    "sidenav.fund.all.reports": "All Fund Reports"
+    "sidenav.fund.all.reports": "All Fund Reports",
+	
+	"sidenav.kyc": "KYC",
+	"sidenav.kyc.pending": "KYC Pending",
+    "sidenav.kyc.approved": "KYC Approved",
+    "sidenav.kyc.rejected": "KYC Rejected"
 }
