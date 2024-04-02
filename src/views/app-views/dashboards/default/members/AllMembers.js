@@ -106,17 +106,11 @@ const AllMembers = () => {
     {
       title: (
         <Switch
-          checked={selectedRowKeys.length === list.length}
+                    checked={selectedRowKeys.length === list.length}
           onChange={handleSelectAllChange}
         />
       ),
       dataIndex: "id",
-      key: "selection",
-      align: "left",
-      width: "2%",
-      fixed: "left",
-      // render: () => null,
-      className: "hide-checkbox-header", // Apply a class to target the header cell
     },
     {
       title: "Name",
@@ -190,14 +184,14 @@ const AllMembers = () => {
   };
 
   const rowSelection = {
-    onChange: (key, rows) => {
-      setSelectedRows(rows);
-      setSelectedRowKeys(key);
-    },
+    // onChange: (key, rows) => {
+    //   setSelectedRows(rows);
+    //   setSelectedRowKeys(key);
+    // },
     selectedRowKeys,
     hideSelectAll: true,
     hideDefaultSelections: true,
-    type: "checkbox", // This is to make sure selection column is still shown
+    type: "none", // This is to make sure selection column is still shown
     getCheckboxProps: (record) => ({
       disabled: record.disabled,
     }),
