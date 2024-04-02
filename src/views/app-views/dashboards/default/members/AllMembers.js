@@ -104,12 +104,13 @@ const AllMembers = () => {
 
   const tableColumns = [
     {
-      title: (
-        <Switch
-                    checked={selectedRowKeys.length === list.length}
-          onChange={handleSelectAllChange}
-        />
-      ),
+      // title: (
+      //   <Switch
+      //               checked={selectedRowKeys.length === list.length}
+      //     onChange={handleSelectAllChange}
+      //   />
+      // ),
+      title: "#",
       dataIndex: "id",
     },
     {
