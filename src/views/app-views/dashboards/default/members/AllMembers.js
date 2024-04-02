@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Table, Select, Input, Button, Badge, Menu } from "antd";
+import { Card, Table, Select, Input, Button, Badge, Menu, Dropdown, Space } from "antd";
 import ProductListData from "assets/data/product-list.data.json";
 import {
   EyeOutlined,
@@ -102,6 +102,34 @@ const AllMembers = () => {
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
+  const handleMenuClick = (e) => {
+    // message.info('Click on menu item.');
+    console.log('click', e);
+  };
+  
+  const items = [
+    {
+      label: '1st menu item',
+      key: '1',
+      // icon: <UserOutlined />,
+    },
+    {
+      label: '2nd menu item',
+      key: '2',
+      // icon: <UserOutlined />,
+    },
+    {
+      label: '3rd menu item',
+      key: '3',
+      // icon: <UserOutlined />,
+    },
+  ];
+
+  const menuProps = {
+    items,
+    onClick: handleMenuClick,
+  };
+
   const tableColumns = [
     {
       // title: (
@@ -154,17 +182,12 @@ const AllMembers = () => {
       dataIndex: "stock",
       render: (stock) => (
         <>
-          <Button
-            className="mr-2"
-            onClick={addProduct}
-            type="primary"
-            size="small"
-          >
-            Actions
-          </Button>
-          <Button onClick={addProduct} type="primary" size="small">
-            Reports
-          </Button>
+          <Dropdown menu={{ items }} placement="topRight"  trigger={['click']} arrow={{ pointAtCenter: true }}>
+            <Button  type="primary" size="small" className="mr-2">Actions</Button>
+          </Dropdown>
+          <Dropdown menu={{ items }} placement="topRight"  trigger={['click']} arrow={{ pointAtCenter: true }}>
+            <Button  type="primary" size="small" >Reports</Button>
+          </Dropdown>
         </>
       ),
       sorter: (a, b) => utils.antdTableSorter(a, b, "stock"),
