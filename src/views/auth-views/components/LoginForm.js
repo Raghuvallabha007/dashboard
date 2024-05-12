@@ -38,8 +38,8 @@ export const LoginForm = props => {
 	} = props
 
 	const initialCredential = {
-		email: 'user1@themenate.net',
-		password: '2005ipo'
+		email: 'admin',
+		password: 'admin'
 	}
 
 	const onLogin = values => {
@@ -112,16 +112,16 @@ export const LoginForm = props => {
 			>
 				<Form.Item 
 					name="email" 
-					label="Email" 
+					label="email" 
 					rules={[
 						{ 
 							required: true,
-							message: 'Please input your email',
+							message: 'Please input your username',
 						},
-						{ 
-							type: 'email',
-							message: 'Please enter a validate email!'
-						}
+						// { 
+						// 	type: 'email',
+						// 	message: 'Please enter a validate email!'
+						// }
 					]}>
 					<Input prefix={<MailOutlined className="text-primary" />}/>
 				</Form.Item>
