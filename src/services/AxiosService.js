@@ -1,3 +1,4 @@
+import { AUTH_TOKEN } from 'constants/AuthConstant';
 import axios from 'axios';
 const baseURLFetch = 'https://database.happypay.live' // Replace with your API base URL
 const axiosInstance = axios.create({
@@ -44,6 +45,7 @@ export const fetchDataByPost = async (url, requestData) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem(AUTH_TOKEN) || null
         // Add any other headers if needed
       },
       body: JSON.stringify(requestData),

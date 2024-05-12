@@ -15,7 +15,7 @@ export const initialState = {
 export const signIn = createAsyncThunk('auth/login',async (data, { rejectWithValue }) => {
 	const { email, password } = data
 	try {
-		const response = await fetchDataByPost('/admin/login', { username: email, password })
+		const response = await fetchDataByPost('/admin/login', { username: email, password }, null)
 		const token = response.token;
 		localStorage.setItem(AUTH_TOKEN, token);
 		return token;

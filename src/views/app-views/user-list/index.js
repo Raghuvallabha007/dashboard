@@ -5,14 +5,21 @@ import dayjs from 'dayjs';
 import UserView from './UserView';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
 import userData from "assets/data/user-list.data.json";
+import { connect } from 'react-redux'
+import {getAllUsers} from 'store/slices/usersSlice';
 
 export class UserList extends Component {
 
 	state = {
-		users: userData,
-		userProfileVisible: false,
-		selectedUser: null
+		// users: userData,
+		// userProfileVisible: false,
+		// selectedUser: null
 	}
+	componentDidMount() {
+		// Access fetchData action creator from props
+		const { getAllUsers } = this.props;	
+		getAllUsers();
+	  }
 
 	deleteUser = userId => {
 		this.setState({
@@ -36,15 +43,14 @@ export class UserList extends Component {
 	}
 
 	render() {
-		const { users, userProfileVisible, selectedUser } = this.state;
-
+		const { data, userProfileVisible, selectedUser } = this.props;
 		const tableColumns = [
 			{
 				title: 'User',
 				dataIndex: 'name',
 				render: (_, record) => (
 					<div className="d-flex">
-						<AvatarStatus src={record.img} name={record.name} subTitle={record.email}/>
+						<AvatarStatus src={record.img} name={record.firstName} subTitle={record.email}/>
 					</div>
 				),
 				sorter: {
@@ -98,7 +104,7 @@ export class UserList extends Component {
 		return (
 			<Card bodyStyle={{'padding': '0px'}}>
 				<div className="table-responsive">
-					<Table columns={tableColumns} dataSource={users} rowKey='id' />
+					<Table columns={tableColumns} dataSource={data} rowKey='_id' />
 				</div>
 				<UserView data={selectedUser} visible={userProfileVisible} close={()=> {this.closeUserProfile()}}/>
 			</Card>
@@ -106,4 +112,15 @@ export class UserList extends Component {
 	}
 }
 
-export default UserList
+const mapStateToProps = ({auth, theme, users}) => {
+	const {loading, message, usersList} = users;
+	console.log(usersList)
+	const {data , totalPages} = usersList
+  return {loading, message, data, totalPages}
+}
+
+const mapDispatchToProps = {
+	getAllUsers
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserList)
